@@ -1,0 +1,39 @@
+{% extends 'bootstrap/base.html' %}
+{% block styles %}
+{{ super() }}
+	<style>
+		body { background: #e8f1f9; }
+	</style>
+{% endblock %}
+
+{% block title %}
+Song List
+{% endblock %}
+
+
+{% block content %}
+<h1 class="pt-5 pb-2">Songs</h1>
+
+      <p class="lead alert alert-warning">This is a list of all songs in the
+			<strong>{{ genre }}</strong> genre .</p>
+
+	  <p class="ml-4"><a href="{{ url_for('index') }}">Return to the index?</a></p>
+
+		<table class="table">
+			<tr>
+				<th>Song Name</th>
+				<th>Game Name</th>
+				<th>Year Released</th>
+				<th>Album Name</th>
+			</tr>
+
+			{% for s in songs %}
+			<tr>
+				<td>{{ s[1] }}</td>
+				<td>{{ s[5] }}</td>
+				<td>{{ s[3] }}</td>
+				<td>{{ s[2] }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+{% endblock %}

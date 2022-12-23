@@ -1,0 +1,30 @@
+
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+{{ super() }}
+	<style>
+		body { background: #e8f1f9; }
+	</style>
+{% endblock %}
+
+
+{% block title %}
+Add Data
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
+        <p class="lead">Please add additional information if available:</p>
+        {{ wtf.quick_form(form) }}
+        <p class="ml-4"><a href="{{ url_for('index') }}">Return to the index?</a></p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'bootstrap/base.html' %}
+{% block styles %}
+{{ super() }}
+	<style>
+		body { background: #e8f1f9; }
+	</style>
+{% endblock %}
+
+{% block title %}
+Result
+{% endblock %}
+
+
+{% block content %}
+<!DOCTYPE html>
+    <p class="lead alert alert-warning">The song you uploaded can be found in the
+			<strong>{{ genre }}</strong> genre .</p>
+
+<p class="ml-4"><a href="{{ url_for('index') }}">Return to the index?</a></p>
+{% endblock %}

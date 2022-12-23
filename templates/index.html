@@ -1,0 +1,28 @@
+{% extends 'bootstrap/base.html' %}
+{% block styles %}
+{{ super() }}
+	<style>
+		body { background: #e8f1f9; }
+	</style>
+{% endblock %}
+
+
+{% block title %}
+Index
+{% endblock %}
+
+{% block content %}
+<h1 class="pt-5 pb-2">Video Game Music Database</h1>
+
+      <p class="lead">This database allows you to browse video game music by genre, input new songs, and predict the genre of new songs.</p>
+
+      <p>Select a genre:</p>
+
+      <ul>
+          {% for g in genres %}
+          <li><a href="{{ url_for( 'songs', genre=g ) }}">{{ g }}</a></li>
+          {% endfor %}
+      </ul>
+
+<p class="ml-4"><a href="{{ url_for('upload_file') }}">Upload a song?</a></p>
+{% endblock %}
